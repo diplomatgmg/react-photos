@@ -1,9 +1,9 @@
 import React, { type ReactElement } from 'react'
 import CategoryItem from './CategoryItem'
-import { useGetCategoriesQuery } from '../redux/api'
-import { useAppDispatch, useAppSelector } from '../redux/hooks'
+import { useGetCategoriesQuery } from '../../redux/api'
+import { useAppDispatch, useAppSelector } from '../../redux/hooks'
 import CategoryItemSkeleton from './CategoryItemSkeleton'
-import { setCategory, setPage } from '../redux/filterCollectionSlice'
+import { setCategory, setPage } from '../../redux/filterCollectionSlice'
 
 const CategoryList = (): ReactElement => {
   const selectedCategoryId = useAppSelector(state => state.filterCollection.category)

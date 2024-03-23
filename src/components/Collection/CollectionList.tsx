@@ -1,7 +1,7 @@
 import React, { type ReactElement } from 'react'
 import CollectionItem from './CollectionItem'
-import { useGetPhotosQuery } from '../redux/api'
-import { useAppSelector } from '../redux/hooks'
+import { useGetPhotosQuery } from '../../redux/api'
+import { useAppSelector } from '../../redux/hooks'
 import CollectionItemSkeleton from './CollectionItemSkeleton'
 
 const CollectionList = (): ReactElement => {

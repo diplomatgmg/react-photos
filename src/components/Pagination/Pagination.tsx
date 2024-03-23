@@ -1,7 +1,7 @@
 import React, { type ReactElement } from 'react'
-import { useAppDispatch, useAppSelector } from '../redux/hooks'
+import { useAppDispatch, useAppSelector } from '../../redux/hooks'
 import PageItem from './PageItem'
-import { setPage } from '../redux/filterCollectionSlice'
+import { setPage } from '../../redux/filterCollectionSlice'
 
 const Pagination = (): ReactElement => {
   const { page } = useAppSelector(state => state.filterCollection)

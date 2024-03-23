@@ -1,5 +1,5 @@
 import React, { type FC, type ReactElement } from 'react'
-import { type Category } from '../types'
+import { type Category } from '../../types'
 
 interface CategoryItemProps {
   category: Category
