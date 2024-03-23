@@ -1,6 +1,8 @@
-## [DEPLOY](https://react-photos-drab.vercel.app/)
+![Preview](https://github.com/diplomatgmg/react-photos/blob/main/public/preview.png?raw=true)
 
-#### Веб-приложение для просмотра и фильтрации коллекций фотографий
+# [DEPLOY](https://react-photos-drab.vercel.app/)
+
+## Веб-приложение для просмотра и фильтрации коллекций фотографий
 
 ### Технологии:
   - React
