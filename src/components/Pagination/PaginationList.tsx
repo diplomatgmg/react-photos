@@ -3,7 +3,7 @@ import { useAppDispatch, useAppSelector } from '../../redux/hooks'
 import PageItem from './PageItem'
 import { setPage } from '../../redux/filterCollectionSlice'
 
-const Pagination = (): ReactElement => {
+const PaginationList = (): ReactElement => {
   const { page } = useAppSelector(state => state.filterCollection)
 
   const dispatch = useAppDispatch()
@@ -14,7 +14,7 @@ const Pagination = (): ReactElement => {
 
   return (
    <ul className="pagination">
-     {[...Array(5)].map((_, index) => (
+     {[...Array(6)].map((_, index) => (
        <PageItem key={index}
                  page={index + 1}
                  currentPage={page}
@@ -24,4 +24,4 @@ const Pagination = (): ReactElement => {
   )
 }
 
-export default Pagination
+export default PaginationList
