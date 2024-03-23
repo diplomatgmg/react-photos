@@ -14,7 +14,7 @@ const CollectionList = (): ReactElement => {
 
   const renderSkeleton = (): ReactElement => (
     <>
-      {Array.from({ length: 8 }).map((_, index) => <CollectionItemSkeleton key={index}/>)}
+      {[...Array(5)].map((_, index) => <CollectionItemSkeleton key={index}/>)}
     </>
   )
 
