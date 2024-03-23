@@ -3,10 +3,12 @@ import reducers from './reducers'
 
 interface CollectionState {
   searchValue: string
+  selectedCategoryId: number
 }
 
 const initialState: CollectionState = {
-  searchValue: ''
+  searchValue: '',
+  selectedCategoryId: 1
 }
 
 const collectionSlice = createSlice({
@@ -16,7 +18,8 @@ const collectionSlice = createSlice({
 })
 
 export const {
-  setSearchValue
+  setSearchValue,
+  setSelectedCategoryId
 } = collectionSlice.actions
 
 export default collectionSlice.reducer

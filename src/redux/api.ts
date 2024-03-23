@@ -10,8 +10,17 @@ const api = createApi({
     getCategories: build.query<Category[], unknown>({
       query: () => 'categories'
     }),
-    getPhotos: build.query<Collection[], unknown>({
-      query: () => 'photos'
+    getPhotos: build.query<Collection[], { category?: number | string }>({
+      query: (params) => ({
+        url: 'photos',
+        params
+      }),
+      transformErrorResponse (baseQueryReturnValue, meta, arg) {
+        console.log(baseQueryReturnValue)
+        console.log(meta)
+        console.log(arg)
+        return []
+      }
     })
   })
 })
