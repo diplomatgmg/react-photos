@@ -67,6 +67,7 @@ h1 {
   grid-template-columns: repeat(3, 1fr);
   grid-column-gap: 30px;
   grid-row-gap: 30px;
+  height: 18vh;
   margin-top: 40px;
 
   @media (max-width: 1000px) {
@@ -79,6 +80,7 @@ h1 {
 }
 
 .collection {
+  height: fit-content;
   max-width: 470px;
   background-color: #fff;
   padding: 30px;
@@ -135,6 +137,13 @@ h1 {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
+
+  & + h1 {
+    display: flex;
+    align-items: center;
+    margin-top: 32px;
+    height: 18vh;
+  }
 }
 
 .search-input {

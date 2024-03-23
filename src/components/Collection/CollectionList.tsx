@@ -11,7 +11,7 @@ const CollectionList = (): ReactElement => {
   const { data: collection = [], isLoading, isFetching, isError } = useGetPhotosQuery(filterData)
 
   if (isError || collection.length === 0) {
-    return <h1 style={{ marginTop: '32px' }}>Нет коллекций.</h1>
+    return <h1>Нет коллекций.</h1>
   }
 
   const renderSkeleton = (): ReactElement => (
