@@ -11,14 +11,19 @@ const CollectionList = (): ReactElement => {
 
   const {
     data: collection,
-    isLoading: isLoadingCollection,
-    isFetching: isFetchingCollection
+    isLoading,
+    isFetching,
+    isError
   } = useGetPhotosQuery({ category: selectedCategoryId === 1 ? '' : selectedCategoryId })
+
+  if (isError) {
+    return <h1 style={{ marginTop: '32px' }}>Нет коллекций.</h1>
+  }
 
   return (
     <div className="content">
       {
-        isLoadingCollection || isFetchingCollection
+        isLoading || isFetching
           ? (
               Array.from({ length: 8 }).map((_, index) => <CollectionItemSkeleton key={index}/>)
             )

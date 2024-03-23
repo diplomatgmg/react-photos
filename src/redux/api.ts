@@ -14,13 +14,7 @@ const api = createApi({
       query: (params) => ({
         url: 'photos',
         params
-      }),
-      transformErrorResponse (baseQueryReturnValue, meta, arg) {
-        console.log(baseQueryReturnValue)
-        console.log(meta)
-        console.log(arg)
-        return []
-      }
+      })
     })
   })
 })
