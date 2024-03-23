@@ -2,11 +2,12 @@ import React, { type ReactElement } from 'react'
 import CategoryItem from './CategoryItem'
 import { useGetCategoriesQuery } from '../redux/api'
 import { useAppDispatch, useAppSelector } from '../redux/hooks'
-import { setSelectedCategoryId } from '../redux/collectionSlice'
 import CategoryItemSkeleton from './CategoryItemSkeleton'
+import { setCategory, setPage } from '../redux/filterCollectionSlice'
 
 const CategoryList = (): ReactElement => {
-  const selectedCategoryId = useAppSelector(state => state.collection.selectedCategoryId)
+  const selectedCategoryId = useAppSelector(state => state.filterCollection.category)
+
   const dispatch = useAppDispatch()
 
   const {
@@ -15,7 +16,8 @@ const CategoryList = (): ReactElement => {
   } = useGetCategoriesQuery({})
 
   const handleSelectCategory = (categoryId: number): void => {
-    dispatch(setSelectedCategoryId(categoryId))
+    dispatch(setCategory(categoryId))
+    dispatch(setPage(1))
   }
 
   return (
@@ -29,7 +31,7 @@ const CategoryList = (): ReactElement => {
           <CategoryItem
             key={category.id}
             category={category}
-            selectedCategory={selectedCategoryId}
+            selectedCategory={selectedCategoryId === '' ? 1 : selectedCategoryId}
             handleSelectCategory={handleSelectCategory}
           />
             ))

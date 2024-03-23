@@ -5,16 +5,18 @@ import { useAppSelector } from '../redux/hooks'
 import CollectionItemSkeleton from './CollectionItemSkeleton'
 
 const CollectionList = (): ReactElement => {
-  const { selectedCategoryId, searchValue } = useAppSelector(state => state.collection)
-  const { data: collection = [], isLoading, isFetching, isError } = useGetPhotosQuery({ category: selectedCategoryId === 1 ? '' : selectedCategoryId })
+  const { searchValue } = useAppSelector(state => state.collection)
+  const filterData = useAppSelector(state => state.filterCollection)
 
-  if (isError) {
+  const { data: collection = [], isLoading, isFetching, isError } = useGetPhotosQuery(filterData)
+
+  if (isError || collection.length === 0) {
     return <h1 style={{ marginTop: '32px' }}>Нет коллекций.</h1>
   }
 
   const renderSkeleton = (): ReactElement => (
     <>
-      {[...Array(5)].map((_, index) => <CollectionItemSkeleton key={index}/>)}
+      {[...Array(3)].map((_, index) => <CollectionItemSkeleton key={index}/>)}
     </>
   )
 

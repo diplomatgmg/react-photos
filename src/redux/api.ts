@@ -10,7 +10,7 @@ const api = createApi({
     getCategories: build.query<Category[], unknown>({
       query: () => 'categories'
     }),
-    getPhotos: build.query<Collection[], { category?: number | string }>({
+    getPhotos: build.query<Collection[], Record<any, any>>({
       query: (params) => ({
         url: 'photos',
         params

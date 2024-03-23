@@ -1,25 +1,25 @@
-import { createSlice } from '@reduxjs/toolkit'
-import reducers from './reducers'
+import { createSlice, type PayloadAction } from '@reduxjs/toolkit'
 
 interface CollectionState {
   searchValue: string
-  selectedCategoryId: number
 }
 
 const initialState: CollectionState = {
-  searchValue: '',
-  selectedCategoryId: 1
+  searchValue: ''
 }
 
 const collectionSlice = createSlice({
   name: 'collection',
   initialState,
-  reducers
+  reducers: {
+    setSearchValue (state: CollectionState, action: PayloadAction<string>) {
+      state.searchValue = action.payload
+    }
+  }
 })
 
 export const {
-  setSearchValue,
-  setSelectedCategoryId
+  setSearchValue
 } = collectionSlice.actions
 
 export default collectionSlice.reducer
